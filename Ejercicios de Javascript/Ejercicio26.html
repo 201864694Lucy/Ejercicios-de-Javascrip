@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+Escribir un algoritmo que permita calcular y mostrar el jornal
+mensual de una empresa de acuerdo con las siguientes especificaciones:
+· los trabajadores tienen dos turnos (nocturno y diurno)
+· la tarifa de las horas diurnas es de 10 pesos.
+· La tarifa de las nocturnas es de 20 pesos.
+· Ningún trabajador recibe nada por sábados o domingos.
+· El trabajador será despedido si sus horas trabajadas son menores que
+15.
+El algoritmo termina cuando sea dado cero como horas trabajadas.
+*/
+
+/*
+EN ESTE PROBLEMA SE CONSIDERA EL MES CON UN TOTAL DE 30 DIAS Y SE RESTAN 8 DIAS
+POR LOS DIAS SABADOS Y DOMIGOS DE 4 SEMANAS*/
+        let horas=undefined,turno="", sueldo=0;
+        function jornal(){
+            horas= prompt(`Ìngrese las horas laboradas en un dia`);
+            if(horas>0){
+                turno= prompt(`Ìngrese el turno`);
+                if(!turno){alert("No has ingresado la informacion");}
+            if(Math.sign(horas)===-1){alert("Las horas no deben de ser menores de 0");}
+
+            if(turno==="nocturno"){
+                sueldo =(horas*20)*22;
+                document.write(`El sueldo mensual es de: $${sueldo}<br>`);
+                if(horas<15) document.write("EL TRABAJADOR ESTÁ DESPEDIDO<br>");
+            }
+            if(turno==="diurno"){
+                sueldo = (horas*10)*22;
+                document.write(`El sueldo mensual es de: $${sueldo}<br>`);
+                if(horas<15) document.write("EL TRABAJADOR ESTÁ DESPEDIDO<br>");
+            }
+            }else retur(0);
+        }
+        jornal();
+    </script>
+</body>
+</html>

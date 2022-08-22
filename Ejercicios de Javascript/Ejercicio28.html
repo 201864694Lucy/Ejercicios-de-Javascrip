@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio28</title>
+</head>
+<body>
+    <script>
+        /*
+Escribir un algoritmo que clasifique a 50 personas según su edad y
+sexo, al final deberá escribir la cantidad de personas masculinas mayores
+de edad, la cantidad de personas femeninas menores de edad, cantidad de
+personas mayores y menores, además deberá indicar el porcentaje que
+representan las personas mayores y las menores, de edad.
+*/
+let edad,sexo, mayores=0, menores=0, mujeres=0, hombres=0,personas = 0;
+function orden(){
+    personas = prompt("Numero de personas a evaluar :");
+
+for(let i=0; i<personas; i++)
+{
+  edad = prompt("Ingrese la edad " + (i+1));
+  sexo = prompt("Ingrese el sexo (F) ó (M) ");
+
+if(edad>18 && sexo=="M")
+{hombres++;}
+
+if(edad<19 && sexo=="F")
+{mujeres++;}
+
+if(edad<18)
+{menores++;}
+
+if(edad>=18)
+{mayores++;}
+}
+
+
+document.write(`Hombres mayores de edad  : ${hombres}<br>`);
+document.write(`Mujeres menores de edad  : ${mujeres}<br>`);
+document.write(`Personas menores de edad : ${menores}<br>`);
+document.write(`Personas mayores de edad : ${mayores}<br>`);
+document.write(`Porcentaje de las personas menores de edad: ${(menores/personas)*100}%<br>`);
+document.write(`Promedio de las personas mayores de edad: ${(mayores/personas)*100}%`);
+}
+orden();
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercio15</title>
+</head>
+<body>
+    <script>
+        /*
+        Escribir un algoritmo que permita escoger en un conjunto de números
+        naturales:
+        Cuáles son menores que 15.
+        Cuáles son mayores de 50.
+        Cuáles están comprendidos entre 25 y 50.
+        El algoritmo termina con el ingreso de un número negativo.
+        */
+        let numero = 0,arreglo1 = [], arreglo2 = [], arreglo3 = [], arreglo4=[];
+ const separar = () =>{
+            while (numero >=0) {
+                numero = prompt("Ingresa un número");
+                if(numero>=15&&numero<25){ 
+                    arreglo4.push(numero);
+                }
+                if (numero >=0 && numero < 15) {
+                    arreglo1.push(numero);
+                } 
+                if(numero >= 50) {
+                    arreglo2.push(numero);
+                }
+                if (numero >= 25 && numero < 50) {
+                    arreglo3.push(numero);
+                } 
+            }
+            document.write(`Números menores que 15: ${arreglo1}`);
+            document.write("<br>");
+            document.write(`Números mayores que 50: ${arreglo2}`);
+            document.write("<br>");
+            document.write(`Números entre 25 y 50: ${arreglo3}`);
+            document.write("<br>");
+            document.write(`Numeros que no cumplen ninguna condicion: ${arreglo4}`);
+
+        }   
+            separar();
+    </script>
+    
+</body>
+</html>

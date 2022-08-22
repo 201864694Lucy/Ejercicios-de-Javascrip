@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio13</title>
+</head>
+<body>
+    <script>
+/*
+Escribir un algoritmo que calcule las raíces de una ecuación
+cuadrática cuya forma canónica es:
+Ax**2 + By + C = 0
+Solo se calcularán raíces reales. si el discriminante en menor de 0,
+imprimir un mensaje que indique que existen dos raíces imaginarias. Los
+coeficientes A,B,C serán ingresados.
+*/
+        let A = 0,B = 0, C = 0, Disc, raiz1=0, raiz2=0;
+ const raiz = () =>{
+    A = prompt("Ingresa el valor de A");
+    B = prompt("Ingresa el valor de B");
+    C = prompt("Ingresa el valor de C");
+    Disc = (Math.pow(B,2))-(4*A*C);
+    if(Disc<0) document.write("Existen dos raices imaginarias");
+    if(Disc>=0){
+        raiz1 = ((-B)+(Math.sqrt(Disc)))/(2*A);
+        raiz2 = ((-B)-(Math.sqrt(Disc)))/(2*A);
+        document.write(`Raiz1: ${raiz1}<br>Raiz2: ${raiz2}`);
+        
+    }
+       
+        }   
+            raiz();
+    </script>
+    
+</body>
+</html>

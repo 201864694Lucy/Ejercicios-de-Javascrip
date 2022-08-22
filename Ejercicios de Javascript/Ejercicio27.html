@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio27</title>
+</head>
+<body>
+    <script>
+        /*
+Escribir un algoritmo que determine cuántos trabajadores recibirán
+un salario mayor o igual a 500, dadas la tarifa y las horas trabajadas.
+*/
+const sueldos=[];
+let horas=undefined,turno="", sueldo=0, trabajadores=undefined, Mayores=[];
+const salarios = () => {
+    trabajadores= prompt("Ingrese el numero de trabajadores");
+     for (let i = 0; i < trabajadores ; i++) {
+        horas= prompt(`Ìngrese las horas laboradas en un dia`);
+            turno= prompt(`Ìngrese el turno`);
+            if(!turno){alert("No has ingresado la informacion");}
+            if(Math.sign(horas)===-1){alert("Las horas no deben de ser menores de 0");}
+            if(turno==="nocturno"){sueldo =(horas*20)*22;}
+            if(turno==="diurno"){sueldo = (horas*10)*22;}
+        sueldos[i]= sueldo;  
+     }
+    document.write(`${sueldos}<br>`);
+    document.write(`Mayores o igual a $500: ${Mayores = sueldos.filter(num => num >=500)}`);
+}   
+salarios();
+    </script>
+</body>
+</html>
